@@ -1,6 +1,6 @@
 {
-  "name": "starter-node",
-  "description": "Opinionated nodejs project starter - TS version.",
+  "name": "starter-discordbot",
+  "description": "Opinionated Discord Bot project.",
   "author": "Mike Valeriano <mkvlrn@gmail.com>",
   "version": "0.1.0",
   "license": "MIT",

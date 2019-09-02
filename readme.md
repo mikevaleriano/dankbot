@@ -1,3 +1,3 @@
-# starter-node
+# starter-discordbot
 
-Opinionated nodejs project starter using TypeScript.
+Opinionated Discord Bot project.
