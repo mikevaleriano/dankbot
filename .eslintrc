@@ -1,3 +1,6 @@
 {
-  "extends": "mikevaleriano"
+  "extends": "mikevaleriano",
+  "rules": {
+    "no-console": "off"
+  }
 }
