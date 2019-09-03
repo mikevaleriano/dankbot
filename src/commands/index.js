@@ -23,7 +23,8 @@ export default function(bot) {
         break;
 
       case "!mov":
-        await mov(args);
+        result = await mov(args);
+        msg.channel.send(result);
         break;
 
       default:
