@@ -2,7 +2,6 @@
 import { Client } from "discord.js";
 
 import sub from "./sub";
-import mov from "./mov";
 
 /**
  *
@@ -20,11 +19,6 @@ export default function(bot) {
         if (result.extra) {
           msg.channel.send(result.extra);
         }
-        break;
-
-      case "!mov":
-        result = await mov(args);
-        msg.channel.send(result);
         break;
 
       default:
