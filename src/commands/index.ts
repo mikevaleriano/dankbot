@@ -1,13 +1,8 @@
-// eslint-disable-next-line no-unused-vars
 import { Client } from "discord.js";
 
 import sub from "./sub";
 
-/**
- *
- * @param {Client} bot
- */
-export default function(bot) {
+export default function(bot: Client): void {
   bot.on("message", async msg => {
     const args = msg.content.split(" ");
     let result;

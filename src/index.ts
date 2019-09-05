@@ -1,8 +1,3 @@
-// these 2 imports are needed for babel
-// they replace @babel/polyfill as of babel 7.4.0
-import "core-js/stable";
-import "regenerator-runtime/runtime";
-
 import { Client } from "discord.js";
 
 import commands from "./commands";
