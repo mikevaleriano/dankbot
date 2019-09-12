@@ -5,10 +5,13 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec \"babel-node src/index --extensions .ts\"",
+    "dev": "nodemon --exec \"babel-node src/bot --extensions .ts\"",
     "build": "rimraf build && babel src -d build --extensions .ts",
     "lint": "eslint \"src/**/*\" --fix",
     "tsc": "tsc --watch"
+  },
+  "engines": {
+    "node": "12"
   },
   "dependencies": {
     "axios": "^0.19.0",
