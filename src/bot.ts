@@ -1,3 +1,6 @@
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
 import { Client } from "discord.js";
 
 import commands from "./commands";
