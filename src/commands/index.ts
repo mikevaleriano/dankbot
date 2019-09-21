@@ -19,7 +19,7 @@ export default function(bot: Client): void {
 
       case "!ca":
         result = await ca(args, msg);
-        const ch = msg.client.channels.find(ch => ch.name === "pirueba");
+        const ch = msg.client.channels.find(ch => ch.name === "bloodymemo");
         await ch.send(result.embed);
         if (result.target) {
           const { guild } = msg;
