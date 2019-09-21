@@ -33,10 +33,12 @@ const redCards = [
   "https://media2.giphy.com/media/3o7qE0gOGwzPbH81Qk/giphy.gif"
 ];
 
-export default async function(
-  args: string[],
-  msg: Message
-): Promise<RichEmbed> {
+interface Stuff {
+  embed: RichEmbed;
+  target: string;
+}
+
+export default async function(args: string[], msg: Message): Promise<Stuff> {
   const embed = new RichEmbed();
   embed.setColor("#FF00FF");
   embed.setTitle("!ca");
@@ -46,7 +48,7 @@ export default async function(
       "?",
       "O commando *!ca* seguido do nome do seu amiguinho o presenteia com um cartão amarelo."
     );
-    return embed;
+    return { embed, target: "" };
   }
 
   if (!args[1]) {
@@ -54,18 +56,21 @@ export default async function(
       "Nenhum nome detectado",
       "Você precisa especificar o nome de quem vai receber o cartão amarelo, poha. EX: ```!ca JeováLover584```"
     );
-    return embed;
+    return { embed, target: "" };
   }
 
-  const target = args[1];
-  const members = msg.guild.members.map(item => item.user.username);
+  args.shift();
+  const target = args.join(" ");
+  const members = msg.guild.members.map(item => item.displayName);
   if (!members.includes(target)) {
     embed.addField(
       "Usuário não encontrado no server",
       `Mas quem diabos é *${target}*? QUEM?`
     );
-    return embed;
+    return { embed, target: "" };
   }
+
+  embed.addField(`${target} foi advertido!`, `A regra é clara.`);
 
   let dude = (await CaModel.findOne({ name: target })) as Nigga;
   if (!dude) {
@@ -82,13 +87,11 @@ export default async function(
     await dude.save();
   }
 
-  embed.addField(`${target} foi advertido!`, `A regra é clara.`);
-
   const thumb = dude.yellow === 1 ? yellowThumb : redThumb;
   const cards = dude.yellow === 1 ? yellowCards : redCards;
 
   embed.setThumbnail(thumb);
   embed.setImage(cards[Math.floor(Math.random() * cards.length)]);
 
-  return embed;
+  return { embed, target: dude.yellow ? "" : target };
 }

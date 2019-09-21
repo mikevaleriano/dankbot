@@ -19,8 +19,13 @@ export default function(bot: Client): void {
 
       case "!ca":
         result = await ca(args, msg);
-        const ch = msg.client.channels.find(ch => ch.name === "bloodymemo");
-        await ch.send(result);
+        const ch = msg.client.channels.find(ch => ch.name === "pirueba");
+        await ch.send(result.embed);
+        if (result.target) {
+          const { guild } = msg;
+          const dude = guild.members.find("displayName", result.target);
+          dude.addRole("624847208008908801", "Cartão vermelho, bicho");
+        }
         break;
 
       default:
