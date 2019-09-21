@@ -1,6 +1,7 @@
 import { Client } from "discord.js";
 
 import sub from "./sub";
+import ca from "./ca";
 
 export default function(bot: Client): void {
   bot.on("message", async msg => {
@@ -14,6 +15,12 @@ export default function(bot: Client): void {
         if (result.extra) {
           msg.channel.send(result.extra);
         }
+        break;
+
+      case "!ca":
+        result = await ca(args, msg);
+        const ch = msg.client.channels.find(ch => ch.name === "bloodymemo");
+        await ch.send(result);
         break;
 
       default:

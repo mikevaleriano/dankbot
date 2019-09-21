@@ -1,1 +1,1 @@
-bot: node build/bot
+bot: node - dotenv/config build/bot

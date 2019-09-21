@@ -5,8 +5,8 @@
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec \"babel-node src/bot --extensions .ts\"",
-    "build": "rimraf build && babel src -d build --extensions .ts",
+    "dev": "nodemon --exec \"babel-node src/bot -x .ts\"",
+    "build": "rimraf build && babel src -d build -x .ts",
     "lint": "eslint \"src/**/*\" --fix",
     "tsc": "tsc --watch"
   },
@@ -17,6 +17,8 @@
     "axios": "^0.19.0",
     "core-js": "^3.2.1",
     "discord.js": "^11.5.1",
+    "dotenv": "^8.1.0",
+    "mongoose": "^5.7.1",
     "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
@@ -25,6 +27,8 @@
     "@babel/node": "^7.6.1",
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-typescript": "^7.6.0",
+    "@types/dotenv": "^6.1.1",
+    "@types/mongoose": "^5.5.17",
     "@types/node": "^12.7.5",
     "eslint-config-mkvlrn": "^1.1.0",
     "nodemon": "^1.19.2",
