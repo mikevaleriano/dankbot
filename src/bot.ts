@@ -1,26 +1,15 @@
 import "core-js/stable";
 import "regenerator-runtime/runtime";
-import mongoose from "mongoose";
-
 import { Client } from "discord.js";
+import { config } from "dotenv";
 
 import commands from "./commands";
 
+// dotenv
+config();
+
 const bot = new Client();
-const { STARTER_BOT_TOKEN } = process.env;
-
-const conn = mongoose.connection;
-
-conn.on("error", err => {
-  throw err.message;
-});
-
-mongoose.connect(process.env.YCURI as string, {
-  useNewUrlParser: true,
-  dbName: process.env.YCDB as string,
-  useFindAndModify: false,
-  useUnifiedTopology: true
-});
+const { DANKBOT_TOKEN } = process.env;
 
 bot.on("ready", () => {
   bot.user.setActivity("HARDCORE BUTT STUFF", {
@@ -33,4 +22,4 @@ bot.on("ready", () => {
 
 commands(bot);
 
-bot.login(STARTER_BOT_TOKEN);
+bot.login(DANKBOT_TOKEN);

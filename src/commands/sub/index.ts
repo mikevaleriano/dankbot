@@ -110,7 +110,7 @@ export default async function(args: string[]): Promise<Result> {
     }
 
     embed.setFooter(
-      `Shamelessly stolen from ${sub.display_name_prefixed}, on reddit.`,
+      `Shamelessly stolen from ${sub.display_name_prefixed}`,
       "https://i.gifer.com/hc7.gif"
     );
   } else {
