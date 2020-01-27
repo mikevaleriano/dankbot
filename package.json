@@ -2,7 +2,7 @@
   "name": "starter-discordbot",
   "description": "Opinionated Discord Bot project.",
   "author": "Mike Valeriano <mkvlrn@gmail.com>",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec \"babel-node src/bot -x .ts\"",
