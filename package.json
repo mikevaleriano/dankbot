@@ -14,25 +14,25 @@
     "node": "12"
   },
   "dependencies": {
-    "axios": "^0.19.0",
-    "core-js": "^3.5.0",
+    "axios": "^0.19.2",
+    "core-js": "^3.6.4",
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
     "regenerator-runtime": "^0.13.3"
   },
   "devDependencies": {
-    "@babel/cli": "^7.7.5",
-    "@babel/core": "^7.7.5",
-    "@babel/node": "^7.7.4",
-    "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
-    "@babel/preset-env": "^7.7.6",
-    "@babel/preset-typescript": "^7.7.4",
+    "@babel/cli": "^7.8.3",
+    "@babel/core": "^7.8.3",
+    "@babel/node": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
     "@types/dotenv": "^8.2.0",
-    "@types/node": "^12.12.18",
-    "eslint-config-mkvlrn": "^1.6.0",
+    "@types/node": "^13.5.0",
+    "eslint-config-mkvlrn": "^1.7.1",
     "nodemon": "^2.0.2",
     "rimraf": "^3.0.0",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.5"
   }
 }
