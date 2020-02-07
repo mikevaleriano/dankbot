@@ -23,7 +23,7 @@ export default function(bot: Client): void {
           const channel = msg.guild.channels.find(
             x => x.name === "timeout" || x.name === "Canal do Opo-Opo"
           ) as VoiceChannel;
-          msg.channel.send(
+          await msg.channel.send(
             `<@${target.id}> is being punished by <@${msg.author.id}>`,
             {
               tts: true

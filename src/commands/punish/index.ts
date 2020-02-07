@@ -1,6 +1,8 @@
 import { GuildMember, VoiceChannel, GuildChannel, Client } from "discord.js";
 import ytdl from "ytdl-core";
 
+const resist = ["AsGadjc", "OifqANC", "8clg9g7"];
+
 export default async function(
   target: GuildMember,
   channel: VoiceChannel,
@@ -24,6 +26,22 @@ export default async function(
     bot.on("voiceStateUpdate", async (oldUser, newUser) => {
       if (newUser === target) {
         await target.setVoiceChannel(channel as GuildChannel);
+      }
+    });
+    bot.once("voiceStateUpdate", async (oldUser, newUser) => {
+      if (newUser === target) {
+        await target.send(
+          "You are being punished. Just let it happen. It will all be over soon.",
+          {
+            embed: {
+              image: {
+                url: `https://i.imgur.com/${
+                  resist[Math.floor(Math.random() * resist.length)]
+                }.jpg`
+              }
+            }
+          }
+        );
       }
     });
   });

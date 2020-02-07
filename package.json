@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec \"babel-node src/bot -x .ts\"",
-    "build": "rimraf build && babel src -d build -x .ts",
+    "build": "rimraf build && babel src -d build -x .ts && cp src/commands/punish/*.jpeg build/commands/punish",
     "lint": "eslint \"src/**/*\" --fix",
     "tsc": "tsc --watch"
   },
