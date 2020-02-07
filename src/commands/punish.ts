@@ -15,6 +15,8 @@ export default async function(
 
   await target.setVoiceChannel(channel as GuildChannel);
 
+  target.send("You're being punished. Resisting is futile.");
+
   const stream = ytdl("https://www.youtube.com/watch?v=HqMR__TTiAQ");
   const dispatcher = conn.playStream(stream, { seek: 2 });
 
