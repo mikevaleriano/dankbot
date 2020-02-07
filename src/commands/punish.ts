@@ -7,6 +7,10 @@ export default async function(
   oldChannel: VoiceChannel,
   bot: Client
 ): Promise<void> {
+  if (bot.voiceConnections.first()) {
+    return;
+  }
+
   const conn = await channel.join();
 
   await target.setVoiceChannel(channel as GuildChannel);
