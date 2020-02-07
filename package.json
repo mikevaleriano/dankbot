@@ -11,14 +11,16 @@
     "tsc": "tsc --watch"
   },
   "engines": {
-    "node": "12"
+    "node": "13"
   },
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
     "discord.js": "^11.5.1",
     "dotenv": "^8.2.0",
-    "regenerator-runtime": "^0.13.3"
+    "node-opus": "^0.3.3",
+    "regenerator-runtime": "^0.13.3",
+    "ytdl-core": "^1.0.7"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
