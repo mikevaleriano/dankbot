@@ -1,4 +1,10 @@
-import { GuildMember, VoiceChannel, GuildChannel, Client } from "discord.js";
+import {
+  GuildMember,
+  VoiceChannel,
+  GuildChannel,
+  Client,
+  Message
+} from "discord.js";
 import ytdl from "ytdl-core";
 
 const resist = ["AsGadjc", "OifqANC", "8clg9g7"];
@@ -7,18 +13,14 @@ export default async function(
   target: GuildMember,
   channel: VoiceChannel,
   oldChannel: VoiceChannel,
-  bot: Client
+  bot: Client,
+  msg: Message
 ): Promise<void> {
   if (bot.voiceConnections.first()) {
     return;
   }
 
   const conn = await channel.join();
-
-  await target.setVoiceChannel(channel as GuildChannel);
-
-  target.send("You're being punished. Resisting is futile.");
-
   const stream = ytdl("https://www.youtube.com/watch?v=HqMR__TTiAQ");
   const dispatcher = conn.playStream(stream, { seek: 2 });
 
@@ -50,4 +52,12 @@ export default async function(
     await target.setVoiceChannel(oldChannel);
     channel.leave();
   });
+
+  await msg.channel.send(
+    `<@${target.id}> is being punished by <@${msg.author.id}>`
+  );
+
+  await target.setVoiceChannel(channel as GuildChannel);
+
+  target.send("You're being punished. Resisting is futile.");
 }

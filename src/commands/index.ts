@@ -23,8 +23,7 @@ export default function(bot: Client): void {
           const channel = msg.guild.channels.find(
             x => x.name === "timeout" || x.name === "Canal do Opo-Opo"
           ) as VoiceChannel;
-          await msg.delete();
-          await punish(target, channel, oldChannel, bot);
+          await punish(target, channel, oldChannel, bot, msg);
         }
         break;
 
