@@ -10,9 +10,6 @@
     "lint": "eslint \"src/**/*\" --fix",
     "tsc": "tsc --watch"
   },
-  "engines": {
-    "node": "13"
-  },
   "dependencies": {
     "axios": "^0.19.2",
     "core-js": "^3.6.4",
@@ -20,21 +17,21 @@
     "dotenv": "^8.2.0",
     "node-opus": "^0.3.3",
     "regenerator-runtime": "^0.13.3",
-    "ytdl-core": "^1.0.9"
+    "ytdl-core": "^2.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.4",
+    "@babel/core": "^7.8.6",
     "@babel/node": "^7.8.4",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
-    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-env": "^7.8.6",
     "@babel/preset-typescript": "^7.8.3",
     "@types/dotenv": "^8.2.0",
-    "@types/node": "^13.7.1",
-    "eslint-config-mkvlrn": "^1.7.3",
+    "@types/node": "^13.7.6",
+    "eslint-config-mkvlrn": "^1.7.4",
     "nodemon": "^2.0.2",
     "rimraf": "^3.0.2",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.2"
   }
 }
