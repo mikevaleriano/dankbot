@@ -5,7 +5,7 @@ import subList from "./list";
 
 export default async function (args) {
   const embed = new RichEmbed();
-  let extra: string | null = null;
+  let extra = null;
   embed.setColor("#FF00FF");
 
   if (args[1] === "?") {
