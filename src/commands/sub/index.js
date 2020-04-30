@@ -1,10 +1,10 @@
 import axios from "axios";
-import { RichEmbed } from "discord.js";
+import { MessageEmbed } from "discord.js";
 
 import subList from "./list";
 
 export default async function (args) {
-  const embed = new RichEmbed();
+  const embed = new MessageEmbed();
   let extra = null;
   embed.setColor("#FF00FF");
 
