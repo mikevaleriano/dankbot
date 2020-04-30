@@ -5,33 +5,26 @@
   "version": "0.1.1",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec \"babel-node src/bot -x .ts\"",
-    "build": "rimraf build && babel src -d build -x .ts",
-    "lint": "eslint \"src/**/*\" --fix",
-    "tsc": "tsc --watch"
+    "dev": "nodemon --exec 'babel-node src/bot'",
+    "build": "rimraf build && babel src -d build",
+    "lint": "eslint 'src/**/*' --fix"
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "core-js": "^3.6.4",
-    "discord.js": "^11.5.1",
+    "core-js": "^3.6.5",
+    "discord.js": "^12.2.0",
     "dotenv": "^8.2.0",
     "node-opus": "^0.3.3",
-    "regenerator-runtime": "^0.13.3",
-    "ytdl-core": "^2.0.0"
+    "regenerator-runtime": "^0.13.5",
+    "ytdl-core": "^2.1.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.8.6",
-    "@babel/node": "^7.8.4",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
-    "@babel/preset-env": "^7.8.6",
-    "@babel/preset-typescript": "^7.8.3",
-    "@types/dotenv": "^8.2.0",
-    "@types/node": "^13.7.6",
-    "eslint-config-mkvlrn": "^1.7.4",
-    "nodemon": "^2.0.2",
-    "rimraf": "^3.0.2",
-    "typescript": "^3.8.2"
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/preset-env": "^7.9.6",
+    "eslint-config-mkvlrn": "^3.0.0",
+    "nodemon": "^2.0.3",
+    "rimraf": "^3.0.2"
   }
 }

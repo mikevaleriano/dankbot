@@ -14,9 +14,10 @@ const { DANKBOT_TOKEN } = process.env;
 bot.on("ready", () => {
   bot.user.setActivity("HARDCORE BUTT STUFF", {
     type: "STREAMING",
-    url: "https://twitch.tv/HARDCORE_BUTT_STUFF"
+    url: "https://twitch.tv/HARDCORE_BUTT_STUFF",
   });
 
+  // eslint-disable-next-line no-console
   console.log(`Logged in as ${bot.user.tag}!`);
 });
 

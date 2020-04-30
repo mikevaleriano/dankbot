@@ -1,14 +1,9 @@
 import axios from "axios";
 import { RichEmbed } from "discord.js";
 
-import { subList } from "./list";
+import subList from "./list";
 
-type Result = {
-  embed: RichEmbed;
-  extra: string | null;
-};
-
-export default async function(args: string[]): Promise<Result> {
+export default async function (args) {
   const embed = new RichEmbed();
   let extra: string | null = null;
   embed.setColor("#FF00FF");
@@ -18,7 +13,7 @@ export default async function(args: string[]): Promise<Result> {
       "The *!sub* command (followed by the appropriate argument) will return a random post from the following subs:"
     );
     embed.addField("```!sub *```", "** *Random sub!* **", true);
-    subList.forEach(i => {
+    subList.forEach((i) => {
       embed.addField(
         `\`\`\`!sub ${i.nick}\`\`\``,
         `[r/${i.full}](https://reddit.com/r/${i.full})`,
@@ -36,7 +31,7 @@ export default async function(args: string[]): Promise<Result> {
     return { embed, extra };
   }
 
-  const subIsListed = subList.some(i => i.nick === args[1]);
+  const subIsListed = subList.some((i) => i.nick === args[1]);
   if (!subIsListed && args[1] !== "*") {
     embed.addField(
       "Invalid entry, yo.",
@@ -47,7 +42,7 @@ export default async function(args: string[]): Promise<Result> {
 
   const realSub =
     args[1] !== "*"
-      ? subList[subList.findIndex(i => i.nick === args[1])].full
+      ? subList[subList.findIndex((i) => i.nick === args[1])].full
       : subList[Math.floor(Math.random() * subList.length)].full;
 
   const postUrl = `https://reddit.com/r/${realSub}/random.json`;
@@ -61,7 +56,7 @@ export default async function(args: string[]): Promise<Result> {
       // eslint-disable-next-line no-await-in-loop
       const [post, sub] = await Promise.all([
         axios.post(postUrl),
-        axios.post(subUrl)
+        axios.post(subUrl),
       ]);
 
       subData = sub;
@@ -73,9 +68,11 @@ export default async function(args: string[]): Promise<Result> {
         : postData.data.data.children[0].data;
       badUrl = tester.url.startsWith("https://v.redd.it");
       if (badUrl) {
+        // eslint-disable-next-line no-console
         console.log(`BAD_URL in ${args[1]}: iterating`);
       }
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.log(e.message);
     }
   } while (badUrl);

@@ -1,10 +1,8 @@
-import { Client, VoiceChannel } from "discord.js";
-
 import sub from "./sub";
 import punish from "./punish";
 
-export default function(bot: Client): void {
-  bot.on("message", async msg => {
+export default function (bot) {
+  bot.on("message", async (msg) => {
     const args = msg.content.split(" ");
     let result;
 
@@ -21,8 +19,8 @@ export default function(bot: Client): void {
           const target = msg.mentions.members.first();
           const oldChannel = target.voiceChannel;
           const channel = msg.guild.channels.find(
-            x => x.name === "timeout" || x.name === "Canal do Opo-Opo"
-          ) as VoiceChannel;
+            (x) => x.name === "timeout" || x.name === "Canal do Opo-Opo"
+          );
           await punish(target, channel, oldChannel, bot, msg);
         }
         break;

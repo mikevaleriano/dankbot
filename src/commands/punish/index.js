@@ -1,21 +1,8 @@
-import {
-  GuildMember,
-  VoiceChannel,
-  GuildChannel,
-  Client,
-  Message
-} from "discord.js";
 import ytdl from "ytdl-core";
 
 const resist = ["AsGadjc", "OifqANC", "8clg9g7"];
 
-export default async function(
-  target: GuildMember,
-  channel: VoiceChannel,
-  oldChannel: VoiceChannel,
-  bot: Client,
-  msg: Message
-): Promise<void> {
+export default async function (target, channel, oldChannel, bot, msg) {
   if (bot.voiceConnections.first()) {
     return;
   }
@@ -27,7 +14,7 @@ export default async function(
   dispatcher.on("start", () => {
     bot.on("voiceStateUpdate", async (oldUser, newUser) => {
       if (newUser === target) {
-        await target.setVoiceChannel(channel as GuildChannel);
+        await target.setVoiceChannel(channel);
       }
     });
     bot.once("voiceStateUpdate", async (oldUser, newUser) => {
@@ -39,9 +26,9 @@ export default async function(
               image: {
                 url: `https://i.imgur.com/${
                   resist[Math.floor(Math.random() * resist.length)]
-                }.jpg`
-              }
-            }
+                }.jpg`,
+              },
+            },
           }
         );
       }
@@ -57,7 +44,7 @@ export default async function(
     `<@${target.id}> is being punished by <@${msg.author.id}>`
   );
 
-  await target.setVoiceChannel(channel as GuildChannel);
+  await target.setVoiceChannel(channel);
 
   target.send("You're being punished. Resisting is futile.");
 }

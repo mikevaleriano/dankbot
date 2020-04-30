@@ -1,4 +1,4 @@
-export const subList = [
+const subList = [
   { nick: "agbc", full: "asiangirlsbeingcute" },
   { nick: "atbge", full: "atbge" },
   { nick: "bf", full: "bossfight" },
@@ -18,5 +18,7 @@ export const subList = [
   { nick: "sg", full: "suddenlygay" },
   { nick: "sp", full: "starterpacks" },
   { nick: "tdnw", full: "thanosdidnothingwrong" },
-  { nick: "tihi", full: "tihi" }
+  { nick: "tihi", full: "tihi" },
 ];
+
+export default subList;
