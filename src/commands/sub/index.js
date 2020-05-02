@@ -3,6 +3,9 @@ import { MessageEmbed } from "discord.js";
 
 import subList from "./list";
 
+/**
+ * @param {string[]} args - Cmds
+ */
 export default async function (args) {
   const embed = new MessageEmbed();
   let extra = null;

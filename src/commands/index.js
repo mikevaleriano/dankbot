@@ -1,6 +1,10 @@
 import sub from "./sub";
 import punish from "./punish";
 
+/**
+ *
+ * @param {import('discord.js').Client} bot - Discord.js Client
+ */
 export default function (bot) {
   bot.on("message", async (msg) => {
     const args = msg.content.split(" ");
