@@ -1,5 +1,4 @@
 import sub from "./sub";
-import punish from "./punish";
 
 /**
  *
@@ -16,16 +15,6 @@ export default function (bot) {
         await msg.channel.send(result.embed);
         if (result.extra) {
           msg.channel.send(result.extra);
-        }
-        break;
-      case "!punish":
-        if (msg.mentions.members.first()) {
-          const target = msg.mentions.members.first();
-          const oldChannel = target.voiceChannel;
-          const channel = msg.guild.channels.find(
-            (x) => x.name === "timeout" || x.name === "Canal do Opo-Opo"
-          );
-          await punish(target, channel, oldChannel, bot, msg);
         }
         break;
 
