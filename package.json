@@ -21,7 +21,7 @@
     "@babel/node": "^7.8.7",
     "@babel/preset-env": "^7.9.6",
     "dotenv": "^8.2.0",
-    "eslint-config-mkvlrn": "^4.1.0",
+    "eslint-config-mkvlrn": "^4.1.2",
     "nodemon": "^2.0.3",
     "rimraf": "^3.0.2"
   }
