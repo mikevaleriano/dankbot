@@ -6,7 +6,7 @@ import subList from "./list";
 /**
  * @param {string[]} args - Cmds
  */
-export default async function (args) {
+export default async function Sub(args) {
   const embed = new MessageEmbed();
   let extra = null;
   embed.setColor("#FF00FF");
