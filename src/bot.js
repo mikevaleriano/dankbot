@@ -8,7 +8,7 @@ const bot = new Client();
 const { DANKBOT_TOKEN } = process.env;
 
 bot.on("ready", () => {
-  bot.user.setActivity("HARDCORE BUTT STUFF", {
+  bot.user.setActivity("E-LOVING MY E-GIRL", {
     type: "STREAMING",
     url: "https://twitch.tv/HARDCORE_BUTT_STUFF",
   });
