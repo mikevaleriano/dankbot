@@ -1,8 +1,6 @@
-import "core-js/stable";
-import "regenerator-runtime/runtime";
 import { Client } from "discord.js";
 
-import commands from "./commands";
+import commands from "./commands/commands.js";
 
 const bot = new Client();
 const { DANKBOT_TOKEN } = process.env;

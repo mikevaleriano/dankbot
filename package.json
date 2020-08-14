@@ -1,27 +1,25 @@
 {
-  "name": "starter-discordbot",
-  "description": "Opinionated Discord Bot project.",
+  "name": "dankbot",
+  "type": "module",
+  "description": "This motherfucker...",
   "author": "Mike Valeriano <mkvlrn@gmail.com>",
   "version": "0.1.1",
   "license": "MIT",
+  "engines": {
+    "node": "^14.8"
+  },
   "scripts": {
-    "dev": "nodemon --exec babel-node src/bot -r dotenv/config",
-    "build": "rimraf build && babel src -d build",
+    "dev": "nodemon --exec \"node -r dotenv/config src/bot.js\"",
+    "start": "node src/bot.js",
     "lint": "eslint src/**/* --fix"
   },
   "dependencies": {
     "axios": "^0.19.2",
-    "core-js": "^3.6.5",
-    "discord.js": "^12.2.0",
-    "regenerator-runtime": "^0.13.5"
+    "discord.js": "^12.2.0"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.4",
-    "@babel/core": "^7.9.6",
-    "@babel/node": "^7.8.7",
-    "@babel/preset-env": "^7.9.6",
     "dotenv": "^8.2.0",
-    "eslint-config-mkvlrn": "^5.0.4",
+    "eslint-config-mkvlrn": "^6.0.0",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2"
   }

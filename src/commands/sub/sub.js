@@ -1,10 +1,11 @@
 import axios from "axios";
 import { MessageEmbed } from "discord.js";
 
-import subList from "./list";
+import subList from "./list.js";
 
 /**
  * @param {string[]} args - Cmds
+ * @returns {object} - Formed Embed
  */
 export default async function Sub(args) {
   const embed = new MessageEmbed();
