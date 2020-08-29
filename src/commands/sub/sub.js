@@ -1,7 +1,7 @@
 import axios from "axios";
 import { MessageEmbed } from "discord.js";
 
-import subList from "./list.js";
+import subList from "./list";
 
 /**
  * @param {string[]} args - Cmds

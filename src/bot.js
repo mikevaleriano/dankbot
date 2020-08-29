@@ -1,14 +1,14 @@
 import { Client } from "discord.js";
 
-import commands from "./commands/commands.js";
+import commands from "./commands/commands";
 
 const bot = new Client();
 const { DANKBOT_TOKEN } = process.env;
 
 bot.on("ready", () => {
-  bot.user.setActivity("E-LOVING MY E-GIRL", {
+  bot.user.setActivity("SIMPING FOR ASMONGOLD", {
     type: "STREAMING",
-    url: "https://twitch.tv/HARDCORE_BUTT_STUFF",
+    url: "https://twitch.tv/asmongold",
   });
 
   // eslint-disable-next-line no-console

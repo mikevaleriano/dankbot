@@ -6,20 +6,20 @@
   "version": "0.1.1",
   "license": "MIT",
   "engines": {
-    "node": "14.8"
+    "node": ">= 14.8.0"
   },
   "scripts": {
-    "dev": "nodemon --exec \"node -r dotenv/config src/bot.js\"",
-    "start": "node src/bot.js",
-    "lint": "eslint src/**/* --fix"
+    "dev": "nodemon --exec \"node --es-module-specifier-resolution=node -r dotenv/config src/bot\"",
+    "start": "node --es-module-specifier-resolution=node src/bot",
+    "lint": "eslint src/**/*.js --fix"
   },
   "dependencies": {
-    "axios": "^0.19.2",
-    "discord.js": "^12.2.0"
+    "axios": "^0.20.0",
+    "discord.js": "^12.3.1"
   },
   "devDependencies": {
+    "@mkvlrn/eslint-config": "2.0.2",
     "dotenv": "^8.2.0",
-    "eslint-config-mkvlrn": "^6.0.0",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2"
   }

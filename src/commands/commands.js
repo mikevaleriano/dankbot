@@ -1,9 +1,10 @@
 import { Client } from "discord.js";
-import sub from "./sub/sub.js";
+
+import sub from "./sub/sub";
 
 /**
  *
- * @param {Client} bot - Discord.js Client
+ * @param {Client} bot Client
  */
 export default function commands(bot) {
   bot.on("message", async (msg) => {
