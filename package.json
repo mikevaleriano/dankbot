@@ -6,7 +6,7 @@
   "version": "0.1.1",
   "license": "MIT",
   "engines": {
-    "node": ">= 14.8.0"
+    "node": "14.8"
   },
   "scripts": {
     "dev": "nodemon --exec \"node --es-module-specifier-resolution=node -r dotenv/config src/bot\"",
