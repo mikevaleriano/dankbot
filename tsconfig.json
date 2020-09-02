@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "module": "ESNext",
+    "lib": [
+      "DOM",
+      "ESNext",
+    ],
+    "baseUrl": ".",
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "experimentalDecorators": true,
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "rootDir": "./src",
+    "strict": true,
+  },
+  "exclude": [
+    "node_modules",
+    "tests",
+    "typings"
+  ],
+  "include": [
+    "./src/**/*.ts",
+    "./tests/**/*.ts",
+  ],
+  "ts-node": {
+    "files": true
+  }
+}

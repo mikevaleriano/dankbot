@@ -2,11 +2,7 @@ import { Client } from "discord.js";
 
 import sub from "./sub/sub";
 
-/**
- *
- * @param {Client} bot Client
- */
-export default function commands(bot) {
+export default function commands(bot: Client): void {
   bot.on("message", async (msg) => {
     const args = msg.content.split(" ");
     let result;

@@ -1,13 +1,10 @@
 import axios from "axios";
 import { MessageEmbed } from "discord.js";
 
-import subList from "./list";
+import { CustomEmbed } from "../../typings/interface";
+import subList from "./list.json";
 
-/**
- * @param {string[]} args - Cmds
- * @returns {object} - Formed Embed
- */
-export default async function Sub(args) {
+export default async function Sub(args: string[]): Promise<CustomEmbed> {
   const embed = new MessageEmbed();
   let extra = null;
   embed.setColor("#FF00FF");

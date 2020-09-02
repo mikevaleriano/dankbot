@@ -6,6 +6,10 @@ const bot = new Client();
 const { DANKBOT_TOKEN } = process.env;
 
 bot.on("ready", () => {
+  if (!bot.user) {
+    throw new Error("Shit happened yo");
+  }
+
   bot.user.setActivity("SIMPING FOR ASMONGOLD", {
     type: "STREAMING",
     url: "https://twitch.tv/asmongold",
