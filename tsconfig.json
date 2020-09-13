@@ -6,6 +6,7 @@
       "DOM",
       "ESNext",
     ],
+    "allowSyntheticDefaultImports": true,
     "baseUrl": ".",
     "emitDecoratorMetadata": true,
     "esModuleInterop": true,
@@ -17,16 +18,13 @@
     "rootDir": "./src",
     "strict": true,
   },
-  "exclude": [
-    "node_modules",
-    "tests",
-    "typings"
-  ],
   "include": [
     "./src/**/*.ts",
-    "./tests/**/*.ts",
+  ],
+  "exclude": [
+    "./node_modules",
   ],
   "ts-node": {
-    "files": true
-  }
+    "files": true,
+  },
 }

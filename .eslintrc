@@ -1,3 +1,6 @@
 {
-  "extends": "mkvlrn"
+  "extends": "mkvlrn",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
 }
