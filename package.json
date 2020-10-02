@@ -5,28 +5,24 @@
   "author": "Mike Valeriano <mkvlrn@gmail.com>",
   "version": "0.1.1",
   "license": "MIT",
-  "engines": {
-    "node": ">= 14.8"
-  },
   "scripts": {
-    "dev": "nodemon --exec \"node --loader ts-node/esm --experimental-specifier-resolution=node -r dotenv/config src/bot\"",
+    "dev": "nodemon --exec \"node ts-node -r dotenv/config src/bot\"",
     "build": "rimraf build && tsc",
-    "start": "node --experimental-specifier-resolution=node build/bot",
-    "lint": "eslint src/**/*.ts --fix && tsc --noemit",
-    "tsc": "tsc -w --noemit"
+    "start": "node build/bot",
+    "lint": "eslint src/**/*.ts --fix && tsc --noemit"
   },
   "dependencies": {
     "axios": "^0.20.0",
     "discord.js": "^12.3.1"
   },
   "devDependencies": {
-    "@types/node": "^14.10.1",
-    "@types/ws": "^7.2.6",
+    "@types/node": "^14.11.2",
+    "@types/ws": "^7.2.7",
     "dotenv": "^8.2.0",
-    "eslint-config-mkvlrn": "^6.1.2",
+    "eslint-config-mkvlrn": "^6.2.1",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
     "ts-node": "^9.0.0",
-    "typescript": "^4.0.2"
+    "typescript": "^4.0.3"
   }
 }
