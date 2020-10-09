@@ -16,10 +16,10 @@
     "discord.js": "^12.3.1"
   },
   "devDependencies": {
-    "@types/node": "^14.11.2",
+    "@types/node": "^14.11.8",
     "@types/ws": "^7.2.7",
     "dotenv": "^8.2.0",
-    "eslint-config-mkvlrn": "^6.2.1",
+    "eslint-config-mkvlrn": "^6.2.2",
     "nodemon": "^2.0.4",
     "rimraf": "^3.0.2",
     "ts-node": "^9.0.0",
