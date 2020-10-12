@@ -1,12 +1,11 @@
 {
   "name": "dankbot",
-  "type": "module",
   "description": "This motherfucker...",
   "author": "Mike Valeriano <mkvlrn@gmail.com>",
   "version": "0.1.1",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec \"node ts-node -r dotenv/config src/bot\"",
+    "dev": "nodemon --exec \"ts-node -r dotenv/config src/bot\"",
     "build": "rimraf build && tsc",
     "start": "node build/bot",
     "lint": "eslint src/**/*.ts --fix && tsc --noemit"
