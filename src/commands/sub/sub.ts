@@ -88,7 +88,7 @@ export default async function Sub(args: string[]): Promise<CustomEmbed> {
       .setAuthor(
         sub.title,
         sub.icon_img || "https://i.imgur.com/PNhOE9K.png",
-        `https://reddit.com${sub.display_name_prefixed}`
+        `https://reddit.com/${sub.display_name_prefixed}`
       )
       .setThumbnail(sub.community_icon || "https://i.imgur.com/PNhOE9K.png")
       .setTitle(post.title)
