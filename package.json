@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec \"ts-node -r dotenv/config src/bot\"",
-    "build": "rimraf build && tsc && docker build -t mkvlrn.azurecr.io/dankbot .",
+    "build": "rimraf build && tsc",
     "lint": "eslint src/**/*.ts --fix && tsc --noemit"
   },
   "dependencies": {
