@@ -6,20 +6,19 @@
   "license": "MIT",
   "scripts": {
     "dev": "nodemon --exec \"ts-node -r dotenv/config src/bot\"",
-    "build": "rimraf build && tsc",
-    "start": "node build/bot",
+    "build": "rimraf build && tsc && docker build -t mkvlrn.azurecr.io/dankbot .",
     "lint": "eslint src/**/*.ts --fix && tsc --noemit"
   },
   "dependencies": {
-    "axios": "^0.20.0",
-    "discord.js": "^12.3.1"
+    "axios": "^0.21.0",
+    "discord.js": "^12.4.1",
+    "dotenv": "^8.2.0"
   },
   "devDependencies": {
-    "@types/node": "^14.11.8",
+    "@types/node": "^14.14.3",
     "@types/ws": "^7.2.7",
-    "dotenv": "^8.2.0",
-    "eslint-config-mkvlrn": "^6.2.2",
-    "nodemon": "^2.0.4",
+    "eslint-config-mkvlrn": "^6.3.0",
+    "nodemon": "^2.0.6",
     "rimraf": "^3.0.2",
     "ts-node": "^9.0.0",
     "typescript": "^4.0.3"

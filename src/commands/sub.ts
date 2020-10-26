@@ -1,15 +1,29 @@
+/* eslint-disable no-console, no-await-in-loop */
+
 import axios from "axios";
-import { MessageEmbed } from "discord.js";
+import { Client, Message, MessageEmbed } from "discord.js";
 
-import { CustomEmbed } from "../../typings/interface";
-import subList from "./list.json";
+import subList from "./sub_list.json";
 
-export default async function Sub(args: string[]): Promise<CustomEmbed> {
+export default async function Sub(
+  msg: Message,
+  args: string[],
+  bot: Client
+): Promise<void> {
+  const arg = args[0] || null;
+
+  async function showStuff(em: MessageEmbed, ex: MessageEmbed | null = null) {
+    await msg.channel.send(em);
+    if (ex) {
+      await msg.channel.send(ex);
+    }
+  }
+
   const embed = new MessageEmbed();
-  let extra = null;
+  let extra: MessageEmbed | null = null;
   embed.setColor("#FF00FF");
 
-  if (args[1] === "?") {
+  if (arg === "?") {
     embed.setTitle(
       "The *!sub* command (followed by the appropriate argument) will return a random post from the following subs:"
     );
@@ -21,29 +35,32 @@ export default async function Sub(args: string[]): Promise<CustomEmbed> {
         true
       );
     });
-    return { embed, extra };
+    showStuff(embed, extra);
+    return;
   }
 
-  if (!args[1]) {
+  if (!arg) {
     embed.addField(
       "No sub argument",
       "You gotta ask for the sub you want, dawg. Like: ```!sub dm```\n\nFor help, check: ```!sub ?```"
     );
-    return { embed, extra };
+    showStuff(embed, extra);
+    return;
   }
 
-  const subIsListed = subList.some((i) => i.nick === args[1]);
-  if (!subIsListed && args[1] !== "*") {
+  const subIsListed = subList.find((i) => i.nick === arg);
+  if (!subIsListed && arg !== "*") {
     embed.addField(
       "Invalid entry, yo.",
       "Check valid entries with:```!sub ?```"
     );
-    return { embed, extra };
+    showStuff(embed, extra);
+    return;
   }
 
   const realSub =
-    args[1] !== "*"
-      ? subList[subList.findIndex((i) => i.nick === args[1])].full
+    arg !== "*"
+      ? subList[subList.findIndex((i) => i.nick === arg)].full
       : subList[Math.floor(Math.random() * subList.length)].full;
 
   const postUrl = `https://reddit.com/r/${realSub}/random.json`;
@@ -54,7 +71,6 @@ export default async function Sub(args: string[]): Promise<CustomEmbed> {
   let badUrl = true;
   do {
     try {
-      // eslint-disable-next-line no-await-in-loop
       const [post, sub] = await Promise.all([
         axios.post(postUrl),
         axios.post(subUrl),
@@ -69,11 +85,9 @@ export default async function Sub(args: string[]): Promise<CustomEmbed> {
         : postData.data.data.children[0].data;
       badUrl = tester.url.startsWith("https://v.redd.it");
       if (badUrl) {
-        // eslint-disable-next-line no-console
-        console.log(`BAD_URL in ${args[1]}: iterating`);
+        console.log(`BAD_URL in ${arg}: iterating`);
       }
     } catch (e) {
-      // eslint-disable-next-line no-console
       console.log(e.message);
     }
   } while (badUrl);
@@ -118,5 +132,5 @@ export default async function Sub(args: string[]): Promise<CustomEmbed> {
     );
   }
 
-  return { embed, extra };
+  showStuff(embed, extra);
 }

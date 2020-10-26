@@ -17,9 +17,13 @@
     "resolveJsonModule": true,
     "rootDir": "./src",
     "strict": true,
+    "typeRoots": [
+      "./typings",
+    ]
   },
   "include": [
     "./src/**/*.ts",
+    "./typings",
   ],
   "exclude": [
     "./node_modules",
