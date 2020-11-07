@@ -4,6 +4,9 @@
   "author": "Mike Valeriano <mkvlrn@gmail.com>",
   "version": "0.1.1",
   "license": "MIT",
+  "engines": {
+    "node": "15.1.0"
+  },
   "scripts": {
     "dev": "nodemon",
     "build": "rimraf build && tsc",
