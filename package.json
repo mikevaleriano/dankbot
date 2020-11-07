@@ -5,7 +5,7 @@
   "version": "0.1.1",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon --exec \"ts-node -r dotenv/config src/bot\"",
+    "dev": "nodemon",
     "build": "rimraf build && tsc",
     "lint": "eslint src/**/*.ts --fix && tsc --noemit"
   },
@@ -15,12 +15,12 @@
     "dotenv": "^8.2.0"
   },
   "devDependencies": {
-    "@types/node": "^14.14.3",
-    "@types/ws": "^7.2.7",
-    "eslint-config-mkvlrn": "^6.3.0",
+    "@types/node": "^14.14.6",
+    "@types/ws": "^7.2.9",
+    "eslint-config-mkvlrn": "^6.4.3",
     "nodemon": "^2.0.6",
     "rimraf": "^3.0.2",
     "ts-node": "^9.0.0",
-    "typescript": "^4.0.3"
+    "typescript": "^4.0.5"
   }
 }

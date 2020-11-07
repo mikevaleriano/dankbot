@@ -2,5 +2,7 @@
   "watch": [
     "package.json",
     "src/"
-  ]
+  ],
+  "ext": "js, ts",
+  "exec": "node_modules/.bin/ts-node -r dotenv/config src/bot.ts"
 }
