@@ -13,7 +13,7 @@
     "lint": "eslint src/**/*.ts --fix && tsc --noemit"
   },
   "dependencies": {
-    "axios": "^0.21.0",
+    "axios": "^0.21.1",
     "discord.js": "^12.4.1",
     "dotenv": "^8.2.0"
   },
